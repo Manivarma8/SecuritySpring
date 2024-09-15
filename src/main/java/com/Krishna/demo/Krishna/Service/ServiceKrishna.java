@@ -31,20 +31,19 @@ public ServiceKrishna(RepositoryKrishna Mv) {
 	      KrishnaGym krish = new KrishnaGym();
 		  for(KrishnaGym take : check) {  
 		  if(take.getName().equals(value.getName())) {
-			  throw new MyException("Yerkaye Iruku Da");
+			  throw new MyException("Yerkanaye Iruku Da");
 		  }
 		  }
 	      krish.setName(value.getName());
 	      krish.setLocation(value.getLocation());
-	      krish.setPassedout(value.getPassedout());		 
-	     
-		  
+	      krish.setPassedout(value.getPassedout());
+	      krish.setRole(value.getRole());
+	      krish.setSalary(value.getSalary());
 		  Mv.save(krish);
 		  return "Success";
 }
 
 	public String sendDetail(KrishnaGym entity) {
-		
 		Mv.save(entity);
 		return "I am Ok";
 	}
@@ -82,5 +81,12 @@ public ServiceKrishna(RepositoryKrishna Mv) {
 		
 	}
 		return "not found";}
+	
+	public KrishnaGym findById(Long id) {
+	    return Mv.findById(id).orElseThrow(() -> new MyException("Gym not found"));
+	}
+
+	
+
 	
 }

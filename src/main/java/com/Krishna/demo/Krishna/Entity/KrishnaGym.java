@@ -17,8 +17,8 @@ private String location;
 private Integer passedout;
 private String role;
 private Integer salary;
+
 public KrishnaGym() {
-	
 }
 public Long getId() {
 	return id;
@@ -64,5 +64,10 @@ public KrishnaGym(Long id, String name, String location, Integer passedout, Stri
 	this.passedout = passedout;
 	this.role = role;
 	this.salary = salary;
+}
+@Override
+public String toString() {
+	return "KrishnaGym [id=" + id + ", name=" + name + ", location=" + location + ", passedout=" + passedout + ", role="
+			+ role + ", salary=" + salary + "]";
 }
 }

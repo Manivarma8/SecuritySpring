@@ -1,9 +1,8 @@
 package com.Krishna.demo.Krishna.Exception;
 
 import java.util.Date;
-
 public class ReviseException {
-	private Integer error;
+private Integer error;
 private String message;
 private Date date;
 public ReviseException(Integer error, String message, Date date) {

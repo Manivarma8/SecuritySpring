@@ -1,0 +1,20 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+	<form th:action="@{/Mani/gym/post2}" th:object="${gym}" method="post">
+	    <label>ID</label>
+	    <input th:field="*{id}" type="number" /><br/>
+	    <label>Name</label>
+	    <input th:field="*{name}" type="text" /><br/>
+	    <label>Location</label>
+	    <input th:field="*{location}" type="text" /><br/>
+	    <label>Passed out</label>
+	    <input th:field="*{passedout}" type="number" /><br/>
+	    <label>Role</label>
+	    <input th:field="*{role}" type="text" /><br/>
+	    <label>Salary</label>
+	    <input th:field="*{salary}" type="number" /><br/>
+	    <input type="submit" value="Submit" />
+	</form>
+
+</body>
+</html>

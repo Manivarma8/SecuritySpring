@@ -48,13 +48,18 @@ public class SecurityConfig {
       return http
           .csrf().disable()
           .authorizeHttpRequests()
-          .requestMatchers("/Mani/gym/health/get").permitAll()
-          .requestMatchers("/Mani/gym/health/add").authenticated()
-          .requestMatchers("/Mani/gym/health/addModel").authenticated()
-          .requestMatchers("/Mani/gym/health/delete/{id}").authenticated()
-          .requestMatchers("/Mani/gym/health/update/{id}").authenticated()
+              // Public endpoints (permitAll)
+              .requestMatchers("/Mani/gym/health/get").permitAll()
+              .requestMatchers("/Mani/gym/post1").permitAll()
+              .requestMatchers("/Mani/gym/post2").permitAll()
+              .requestMatchers("/Mani/gym/health/addModel").permitAll()
+              .requestMatchers("/Mani/gym/Deleted/{id}").hasRole("ADMIN")
+              .requestMatchers("/Mani/gym/Deleted1/{id}").hasRole("ADMIN")
+              .requestMatchers("/Mani/gym/health/update/{id}").hasRole("ADMIN")  // Protect update endpoints
+              .requestMatchers("/Mani/gym/updated/{id}").hasRole("ADMIN")  // Protect updated endpoint
+              .anyRequest().authenticated()  // All other requests need to be authenticated
           .and()
-          .httpBasic()
+          .httpBasic()  // Use HTTP Basic authentication
           .and()
           .build();
   }

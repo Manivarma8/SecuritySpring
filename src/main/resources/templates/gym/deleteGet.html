@@ -1,0 +1,10 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<body>
+		<form th:action="@{/Mani/gym/Deleted1/{id}(id=${id})}" method="post">
+		    <input type="hidden" name="_method" value="delete"/>
+		    <input th:field="*{id}" type="number" placeholder="Enter ID"/>
+		    <input type="submit" value="Submit"/>
+		</form>
+		</body>
+
+</html>

@@ -16,14 +16,30 @@ public class ModelUi {
 	private String location;
 //	@NotBlank(message = "Employee name can't be left empty")
 	private Integer passedout;
+	private String role;
+	private Integer salary;
 	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	public Integer getSalary() {
+		return salary;
+	}
+	public void setSalary(Integer salary) {
+		this.salary = salary;
+	}
 	public ModelUi() {}
-	public ModelUi(Long id, String name, String location, Integer passedout) {
+	public ModelUi(Long id, String name, String location, Integer passedout,String role, Integer salary) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.location = location;
 		this.passedout = passedout;
+		this.salary = salary;
+		this.role = role;
 	}
 	public Long getId() {
 		return id;

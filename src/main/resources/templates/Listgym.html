@@ -1,0 +1,32 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gym</title>
+</head>
+<body><center>
+    <h1>Gym Thanjavur</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Passedout</th>
+                <th>Role</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="lists : ${list}">
+                <td th:text="${lists.id}">Id</td>
+                <td th:text="${lists.name}">Name</td>
+				<td th:text="${lists.location}">Location</td>
+                <td th:text="${lists.passedout}">Passedout</td>
+                <td th:text="${lists.role}">Role</td>
+                <td th:text="${lists.salary}">Salary</td>
+            </tr>
+        </tbody>
+    </table>
+	<br><br>
+  </center>
+</body>
+</html>
